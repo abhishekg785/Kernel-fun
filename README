@@ -1,0 +1,28 @@
+Fun with Linux Kernel
+----------------------
+
+Motivation
+----------
+The best way to learn something is to implement it. Simple !
+So to get into on how the linux kernel works, the best thing will be to create something for the kernel itself.
+
+Contents
+--------
+I have started with a simple hello-world module and more will be added with time.
+
+Compiling them
+--------------
+I have the kernel 4.2.0-27-generic running on my laptop.
+use ' uname -r ' to find out yours.
+
+Installing linux headers:
+  sudo apt-get install linux-headers-4.2.0-27-generic
+
+To compile them, just run
+  make
+
+Load the module into the Kernel (at your own risk!)
+  sudo insmod hello-world.ko
+  dmesg | tail
+ 
+  should display the 'hello world' message 

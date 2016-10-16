@@ -1,0 +1,1 @@
+cmd_/home/hiro/Desktop/Desktop/linux_challenge/hello-world.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/hiro/Desktop/Desktop/linux_challenge/hello-world.ko /home/hiro/Desktop/Desktop/linux_challenge/hello-world.o /home/hiro/Desktop/Desktop/linux_challenge/hello-world.mod.o

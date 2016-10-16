@@ -1,0 +1,53 @@
+----root@hiro-Lenovo-G50-70:~/Desktop/Desktop/linux_challenge# make
+
+make -C /lib/modules/4.2.0-16-generic/build M=/home/hiro/Desktop/Desktop/linux_challenge modules
+make[1]: Entering directory '/usr/src/linux-headers-4.2.0-16-generic'
+  Building modules, stage 2.
+  MODPOST 1 modules
+make[1]: Leaving directory '/usr/src/linux-headers-4.2.0-16-generic'
+
+
+
+
+----root@hiro-Lenovo-G50-70:~/Desktop/Desktop/linux_challenge# modinfo hello-world.ko
+
+filename:       /home/hiro/Desktop/Desktop/linux_challenge/hello-world.ko
+srcversion:     D50B26B84F261303C4D73EF
+depends:        
+vermagic:       4.2.0-16-generic SMP mod_unload modversions 
+
+
+
+
+
+----root@hiro-Lenovo-G50-70:~/Desktop/Desktop/linux_challenge# insmod hello-world.ko
+
+
+
+----root@hiro-Lenovo-G50-70:~/Desktop/Desktop/linux_challenge# lsmod | grep 'hello_world'
+
+hello_world            16384  0
+
+
+
+
+
+----root@hiro-Lenovo-G50-70:/var/log# tail -f kern.log
+
+Jun 27 18:23:52 hiro-Lenovo-G50-70 kernel: [ 2223.919082] Hello World!
+
+
+
+----root@hiro-Lenovo-G50-70:~# rmmod hello-world
+
+
+
+
+----root@hiro-Lenovo-G50-70:/var/log# tail -f kern.log
+
+Jun 27 18:23:52 hiro-Lenovo-G50-70 kernel: [ 2223.919082] Hello World!
+Jun 27 18:29:49 hiro-Lenovo-G50-70 kernel: [ 2580.711778] Unloading module!
+
+
+
+
